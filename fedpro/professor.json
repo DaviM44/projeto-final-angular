@@ -1,6 +1,7 @@
 {
 	"professor" :[
-        { "id": 1, "name": "Zeus", "email":"email@eu.com"}
+        { "id": 1, "name": "Zeus", "email":"email@eu.com"},
+        { "id": 2, "name": "Nikto", "email":"email@eu.com"}
 
 
 ]

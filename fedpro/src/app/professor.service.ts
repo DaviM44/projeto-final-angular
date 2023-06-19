@@ -9,14 +9,24 @@ import { Professor } from './professor';
 export class ProfessorService {
 
   constructor(private http: HttpClient) { }
-
+   url = "http://localhost:3000/Professor";
 
   getProfessores(): Observable<Professor[]>{
-    let url = "http://localhost:3000/Professor";
-    return this.http.get<Professor[]>(url);
+   
+    return this.http.get<Professor[]>(this.url);
   }
 
-  
+  save(professor : Professor): Observable<Professor>{
+    return this.http.post<Professor>(this.url, professor); 
+
+  }
+
+  delete(professor : Professor): Observable<void>{
+    return this.http.delete<void>(`${this.url}\${professor.id}`); 
+
+  }
 }
+
+
 
 
