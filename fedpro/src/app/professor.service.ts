@@ -21,8 +21,12 @@ export class ProfessorService {
 
   }
 
+  update(professor: Professor): Observable<Professor> {
+    return this.http.put<Professor>(`${this.url}/${professor.id}`, professor);
+  }
+
   delete(professor : Professor): Observable<void>{
-    return this.http.delete<void>(`${this.url}\${professor.id}`); 
+    return this.http.delete<void>(`${this.url}/${professor.id}`); 
 
   }
 }

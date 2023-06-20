@@ -1,10 +1,24 @@
 {
-	"professor" :[
-        { "id": 1, "name": "Zeus", "email":"email@eu.com"},
-        { "id": 2, "name": "Nikto", "email":"email@eu.com"}
-
-
-]
-
-
+  "professor": [
+    {
+      "id": 1,
+      "name": "Zeus",
+      "email": "email@eu.com"
+    },
+    {
+      "id": 2,
+      "name": "Nikto",
+      "email": "email@eu.com"
+    },
+    {
+      "id": 3,
+      "name": "Gus",
+      "email": "gustavo@specgru.com"
+    },
+    {
+      "id": 4,
+      "name": "Kreuger",
+      "email": "kreuger@alleg.infra"
+    }
+  ]
 }

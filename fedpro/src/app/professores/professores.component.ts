@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from '../professor.service';
 import { Professor } from '../professor';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-professores',
@@ -11,26 +11,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ProfessoresComponent implements OnInit {
 
   professores: Professor[] = [];
+  isEditing : boolean = false;
+ professor : Professor = {} as Professor;
 
-  formGroupProf : FormGroup;
-
-  constructor(private professorService: ProfessorService,
-              private formBuilder : FormBuilder
-              ){
-
-                this.formGroupProf = formBuilder.group({
-                  id : [''],
-                  name : [''],
-                  email: ['']
-                });
-              }
-
-
+  constructor(private professorService: ProfessorService)
+{
+}
  
- 
- 
- 
-              ngOnInit(): void {
+    ngOnInit(): void {
     this.loadProfessores();
   }
   loadProfessores() {
@@ -40,25 +28,46 @@ export class ProfessoresComponent implements OnInit {
     );
   }
 
-  save(){
-    this.professorService.save(this.formGroupProf.value).subscribe(
+  onSaveEvent(professor: Professor){
+
+      if(this.isEditing){
+    this.professorService.update(professor).subscribe({
+      next: () => {this.loadProfessores();
+        this.isEditing = false;
+      }
+    })
+  }
+     else{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    this.professorService.save(professor).subscribe(
       {
         next: data => {this.professores.push(data);
-        this.formGroupProf.reset();}
+      }
       }
     );
+     }
+    
+
+    
   }
 
-  edit(professor:Professor){
-
+  edit(professor : Professor){
+    this.isEditing = true;
+    this.professor = professor;
   }
 
-  delete(professor:Professor){
+  delete(professor : Professor){
     this.professorService.delete(professor).subscribe(
       {
         next: () => this.loadProfessores()
       }
     )
   }
+
+  
+
+  
+
+
+
 
 }
