@@ -17,6 +17,9 @@ export class ProfessorFormComponent implements OnChanges {
   @Output()
   saveEvent = new EventEmitter<Professor>();
 
+  @Output()
+  cleanEvent = new EventEmitter<void>();
+
   constructor(private formBuilder : FormBuilder
     ){
 

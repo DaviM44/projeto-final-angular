@@ -8,6 +8,7 @@ import { EstudantesFormComponent } from './estudantes-form/estudantes-form.compo
 const routes: Routes = [
   {path: 'professores', component : ProfessoresComponent},
   {path: 'profdetails/:id', component : ProfessorFormComponent},
+  {path: 'novoprof', component : ProfessorFormComponent},
   {path: 'estudantes', component : EstudantesComponent},
   {path: 'estudantedetails/:id', component : EstudantesFormComponent},
   {path: 'estudantereg', component : EstudantesFormComponent}
