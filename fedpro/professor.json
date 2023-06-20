@@ -20,5 +20,17 @@
       "name": "Kreuger",
       "email": "kreuger@alleg.infra"
     }
+  ],
+  "estudante": [
+    {
+      "id": 1,
+      "name": "Zeus",
+      "email": "email@eu.com"
+    },
+    {
+      "id": 2,
+      "name": "meu pau",
+      "email": "tawifin689@dni8.com"
+    }
   ]
 }

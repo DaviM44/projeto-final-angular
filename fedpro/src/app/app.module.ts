@@ -7,12 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfessoresComponent } from './professores/professores.component';
 import { ProfessorFormComponent } from './professor-form/professor-form.component';
+import { EstudantesComponent } from './estudantes/estudantes.component';
+import { EstudantesFormComponent } from './estudantes-form/estudantes-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessoresComponent,
-    ProfessorFormComponent
+    ProfessorFormComponent,
+    EstudantesComponent,
+    EstudantesFormComponent
   ],
   imports: [
     BrowserModule,
