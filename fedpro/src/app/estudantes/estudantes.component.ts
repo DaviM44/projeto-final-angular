@@ -66,6 +66,10 @@ export class EstudantesComponent implements OnInit {
     )
   }
 
+  create() {
+    this.router.navigate(['estudantereg']);
+  }
+
   
 
   

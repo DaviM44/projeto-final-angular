@@ -1,9 +1,11 @@
+
 <table class="table table-dark mt-3">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
+        <th scope="col">Curso</th>
         <th scope="col">Opções</th>
       </tr>
     </thead>
@@ -12,6 +14,7 @@
         <td>{{estudante.id}}</td>
         <td>{{estudante.name}}</td>
         <td>{{estudante.email}}</td>
+        <td>{{estudante.curso}}</td>
         <td>
           <button class="btn btn-warning me-2" (click)="edit(estudante)">Editar</button>
           <button class="btn btn-danger" (click)="delete(estudante)">Deletar</button>
@@ -19,3 +22,6 @@
       </tr>
     </tbody>
   </table>
+  <div class="text-center">
+    <button class="btn btn-primary mt-4" (click)="create()">Novo</button>
+  </div>

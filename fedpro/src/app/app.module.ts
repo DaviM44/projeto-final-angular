@@ -9,6 +9,8 @@ import { ProfessoresComponent } from './professores/professores.component';
 import { ProfessorFormComponent } from './professor-form/professor-form.component';
 import { EstudantesComponent } from './estudantes/estudantes.component';
 import { EstudantesFormComponent } from './estudantes-form/estudantes-form.component';
+import { NabvarComponent } from './nabvar/nabvar.component';
+import { YesNoPipe } from './yes-no.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { EstudantesFormComponent } from './estudantes-form/estudantes-form.compo
     ProfessoresComponent,
     ProfessorFormComponent,
     EstudantesComponent,
-    EstudantesFormComponent
+    EstudantesFormComponent,
+    NabvarComponent,
+    YesNoPipe
   ],
   imports: [
     BrowserModule,

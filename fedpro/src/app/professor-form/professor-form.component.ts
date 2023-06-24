@@ -26,7 +26,8 @@ export class ProfessorFormComponent implements OnChanges {
       this.formGroupProf = formBuilder.group({
         id : [''],
         name : ['',[Validators.required]],
-        email: ['',[Validators.required, Validators.email]]
+        email: ['',[Validators.required, Validators.email]],
+        materia: ['',[Validators.required]]
       });
     }
   ngOnChanges(changes: SimpleChanges): void {
